@@ -1,0 +1,32 @@
+<%= form_with(model: clothing) do |form| %>
+  <% if clothing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clothing.errors.count, "error") %> prohibited this clothing from being saved:</h2>
+
+      <ul>
+        <% clothing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :presenter_id %>
+    <%= collection_select(:clothing, :presenter_id, Presenter.all, :id, :full_name )  %>
+   </div>
+
+  <div class="field">
+    <%= form.label :transmission_id %>
+    <%= collection_select(:clothing, :transmission_id, Transmission.all, :id, :full_transmission )  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :garment_id %>
+    <%= collection_select(:clothing, :garment_id, Garment.all, :id, :full_garment )  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

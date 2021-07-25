@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Presenters</h1>
+
+<table class="table table-striped" style="background-color:#42F1BD;">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @presenters.each do |presenter| %>
+      <tr>
+        <td><%= presenter.first_name %></td>
+        <td><%= presenter.last_name %></td>
+        <td><%= presenter.gender %></td>
+        <td><%= presenter.age %></td>
+        <td><%= link_to 'Show', presenter %></td>
+        <td><%= link_to 'Edit', edit_presenter_path(presenter) %></td>
+        <td><%= link_to 'Destroy', presenter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Presenter', new_presenter_path %>

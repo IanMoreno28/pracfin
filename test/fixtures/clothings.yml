@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  presenter: one
+  transmission: one
+  garment: one
+
+two:
+  presenter: two
+  transmission: two
+  garment: two
